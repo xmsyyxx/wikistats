@@ -5,6 +5,7 @@ on:
 
 jobs:
   build-and-deploy:
+    if: github.event.commits[0].message != '🚀 更新耳斯百科统计数据'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️

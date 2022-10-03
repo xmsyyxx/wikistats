@@ -86,7 +86,7 @@ getToken()
 
     consola.info("开始准备写入");
     fs.mkdirSync(path.resolve(__dirname, "./data"), { recursive: true });
-    const now = new Date().getTime();
+    // const now = new Date().getTime();
     for (let key in viewData) {
       try {
         const filePath = path.resolve(
@@ -97,7 +97,7 @@ getToken()
           filePath,
           JSON.stringify({
             views: viewData[key],
-            update: now,
+            // update: now,
           }),
           "utf-8"
         );
