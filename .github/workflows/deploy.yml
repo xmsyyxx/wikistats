@@ -16,6 +16,13 @@ jobs:
         run: |
           npm install
           node getStats.js
+        env:
+          DOGE_ACCESS_KEY: ${{ secrets.DOGE_ACCESS_KEY }}
+          DOGE_SECRET_KEY: ${{ secrets.DOGE_SECRET_KEY }}
+          DOGE_S3_BUCKET: ${{ secrets.DOGE_S3_BUCKET }}
+          DOGE_S3_ENDPOINT: ${{ secrets.DOGE_S3_ENDPOINT }}
+          UMAMI_ENDPOINT: ${{ secrets.UMAMI_ENDPOINT }}
+          UMAMI_SHARE_TOKEN: ${{ secrets.UMAMI_SHARE_TOKEN }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
@@ -23,5 +30,6 @@ jobs:
           token: ${{ secrets.BOT_ACTION_TOKEN }}
           git-config-name: xhemj-bot
           git-config-email: ${{ secrets.BOT_ACTION_EMAIL }}
+          commit-message: "🚀 更新耳斯百科统计数据"
           branch: master # The branch the action should deploy to.
           folder: . # The folder the action should deploy.
