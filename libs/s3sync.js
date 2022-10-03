@@ -43,7 +43,7 @@ module.exports = function s3sync(s3bucket, localPath, remotePath, config) {
         consola.info("开始上传");
         await sync(targetDir, `s3://${s3bucket}${remotePath}`, {
           monitor,
-          del: true,
+          // del: true,
           commandInput: {
             ContentType: (syncCommandInput) =>
               mime.lookup(syncCommandInput.Key) || "text/html; charset=utf-8",
