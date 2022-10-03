@@ -22,7 +22,7 @@ module.exports = function s3sync(s3bucket, localPath, remotePath, config) {
           return;
         }
         const credentials = data.Credentials;
-        consola.info(credentials);
+        // consola.info(credentials);
         const s3Client = new S3Client({
           region: "ap-beijing",
           endpoint: process.env.DOGE_S3_ENDPOINT,
